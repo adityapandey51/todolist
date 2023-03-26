@@ -12,7 +12,7 @@ app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 
 // connectiing to mongod server and creating a todolist database
-mongoose.connect("mongodb://127.0.0.1:27017/todolistdb");
+mongoose.connect("mongodb+srv://adityapandey3082004:9347158680@cluster0.sy335ht.mongodb.net/todolistdb");
 
 // to render static files to the server based web
 app.use(express.static("public"));
@@ -145,6 +145,6 @@ app.post("/delete",function(req,res){
 
 
 // listening to the server on port 3000
-app.listen(3000,function(){
+app.listen(process.env.PORT || 3000,function(){
     console.log("server started on port 3000");
 });
